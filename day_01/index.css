@@ -1,0 +1,14 @@
+h2{
+    color: brown;
+}
+
+p{
+    color: blueviolet;
+}
+
+button{
+    color: wheat;
+    background-color: brown;
+    padding: 10px;
+    cursor: pointer;
+}
