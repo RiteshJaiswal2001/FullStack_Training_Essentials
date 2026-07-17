@@ -12,3 +12,18 @@ button{
     padding: 10px;
     cursor: pointer;
 }
+.login-page{
+    background-color: rgb(29, 35, 40);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
