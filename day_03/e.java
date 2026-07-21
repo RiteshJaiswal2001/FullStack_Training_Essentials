@@ -9,5 +9,6 @@ public class e {
         };
 
         String choice = arr[1];
+        System.out.println(choice);
     }
 }
