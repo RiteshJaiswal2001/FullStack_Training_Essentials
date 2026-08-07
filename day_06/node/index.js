@@ -56,7 +56,7 @@ app.post('/login', (req, res) => {
     const email = req.body.email;
     const pass = req.body.pass;
 
-    if(email === 'aaryan@example.com' && pass === 'password') {
+    if(email != '' && pass != '') {
         res.json({
             name: 'Aaryan',
             role: 'Trainer',
