@@ -2,9 +2,6 @@ import mongoose from "mongoose";
 import IProduct from "../model/product.js";
 
 const productSchema = new mongoose.Schema<IProduct>({
-  id:{
-    
-  },
   name: {
     type: String,
     required: true,

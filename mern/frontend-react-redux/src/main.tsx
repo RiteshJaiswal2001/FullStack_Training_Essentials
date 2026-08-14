@@ -3,10 +3,12 @@ import "./index.css";
 import App from "./App.tsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { CartProvider } from "./components/CartStore.tsx";
+import { Provider } from "react-redux";
+import { store } from "./store/store.ts";
+
 
 createRoot(document.getElementById("root")!).render(
-  <CartProvider>
+  <Provider store={store}>
     <App />
-  </CartProvider>,
+  </Provider>,
 );
