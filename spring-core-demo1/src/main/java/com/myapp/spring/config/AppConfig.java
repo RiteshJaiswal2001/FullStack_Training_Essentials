@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.myapp.spring.domain.Movie;
 import com.zaxxer.hikari.HikariDataSource;
@@ -40,12 +41,19 @@ public class AppConfig {
     @Bean
     DataSource dataSource(){
         HikariDataSource dataSource = new HikariDataSource();
-        dataSource.setDriverClassName("org.jdbc.PostgreSql.Driver");
-        dataSource.setJdbcUrl("jdbc:postgresql://neondb_owner:npg_oemHZ8RnWuO0@ep-dry-breeze-az3hdykr.c-3.ap-southeast-1.aws.neon.tech/neondb");
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setJdbcUrl("jdbc:postgresql://ep-dry-breeze-az3hdykr.c-3.ap-southeast-1.aws.neon.tech/neondb");
+        dataSource.setUsername("neondb_owner");
+        dataSource.setPassword("npg_oemHZ8RnWuO0");
         dataSource.setMaximumPoolSize(10);
         dataSource.setMinimumIdle(2);
         dataSource.setAutoCommit(false);
         return dataSource;
 
+    }
+
+    @Bean
+    JdbcTemplate jdbcTemplate(DataSource dataSource){
+        return new JdbcTemplate(dataSource);
     }
 }
