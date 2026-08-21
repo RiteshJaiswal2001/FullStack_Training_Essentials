@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.myapp.spring.domain.Movie;
 
@@ -17,6 +19,7 @@ public class MovieJdbcRepositoryImpl implements MovieJdbcRepository {
     }
 
     @Override
+    @Transactional(propagation =  Propagation.REQUIRED)
     public Movie save(Movie movie) {
         String sql = """
                 
